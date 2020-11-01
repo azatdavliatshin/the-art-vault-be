@@ -39,6 +39,25 @@ const serverlessConfiguration: Serverless = {
           }
         }
       ]
+    },
+    getProductById : {
+      handler: 'handler.getProductById',
+      events: [
+        {
+          http: {
+            method: 'get',
+            path: '/products/{productId}',
+            cors: true,
+            request: {
+              parameters: {
+                paths: {
+                  productId: true
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
