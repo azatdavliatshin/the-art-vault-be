@@ -1,51 +1,51 @@
 [
   {
     "count": 4,
-    "description": "Short Product Description1",
+    "description": "Leonardo da Vinci, circa 1500",
     "id": "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
-    "price": 2.4,
-    "title": "ProductOne"
+    "price": 469.7,
+    "title": "Salvator Mundi"
   },
   {
     "count": 6,
-    "description": "Short Product Description3",
+    "description": "Willem de Kooning, 1955",
     "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a0",
-    "price": 10,
-    "title": "ProductNew"
+    "price": 324,
+    "title": "Interchange"
   },
   {
     "count": 12,
-    "description": "Short Product Description7",
+    "description": "Paul Cézanne, 1892/93",
     "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a1",
-    "price": 15,
-    "title": "ProductTitle"
+    "price": 284,
+    "title": "The Card Players"
   },
   {
     "count": 7,
-    "description": "Short Product Description2",
+    "description": "Paul Gauguin, 1892",
     "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a2",
-    "price": 23,
-    "title": "Product"
+    "price": 227,
+    "title": "Nafea Faa Ipoipo (When Will You Marry?)"
   },
   {
     "count": 8,
-    "description": "Short Product Description4",
+    "description": "Jackson Pollock, 1948",
     "id": "7567ec4b-b10c-48c5-9345-fc73348a80a1",
-    "price": 15,
-    "title": "ProductTest"
+    "price": 216,
+    "title": "Number 17A"
   },
   {
     "count": 2,
-    "description": "Short Product Descriptio1",
+    "description": "Gustav Klimt, 1904–07",
     "id": "7567ec4b-b10c-48c5-9445-fc73c48a80a2",
-    "price": 23,
-    "title": "Product2"
+    "price": 210.7,
+    "title": "Wasserschlangen II"
   },
   {
     "count": 3,
-    "description": "Short Product Description7",
+    "description": "Mark Rothko, 1951",
     "id": "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
-    "price": 15,
-    "title": "ProductName"
+    "price": 201,
+    "title": "No. 6 (Violet, Green and Red)"
   }
 ]
