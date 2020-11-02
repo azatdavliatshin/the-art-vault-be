@@ -54,6 +54,19 @@ const serverlessConfiguration = {
               $ref: '{{model: Product}}'
             }
           }
+        },
+        {
+          name: 'ProductNotFoundResponse',
+          description: 'Product is not found',
+          contentType: 'application/json',
+          schema: {
+            type: 'object',
+            properties: {
+              message: {
+                type: 'string'
+              }
+            }
+          }
         }
       ]
     }
@@ -121,6 +134,11 @@ const serverlessConfiguration = {
                   statusCode: '200',
                   description: 'Success response',
                   responseModels: {'application/json': 'Product'}
+                },
+                {
+                  statusCode: '404',
+                  description: 'Error response: product not found',
+                  responseModels: {'application/json': 'ProductNotFoundResponse'}
                 }
               ]
             }

@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "API for best shop of art",
-    "version" : "2020-11-02T18:51:55Z",
+    "version" : "2020-11-02T19:02:12Z",
     "title" : "dev-product-service"
   },
   "host" : "340ixzs2ig.execute-api.eu-west-1.amazonaws.com",
@@ -61,6 +61,12 @@
             "schema" : {
               "$ref" : "#/definitions/Product"
             }
+          },
+          "404" : {
+            "description" : "Error response: product not found",
+            "schema" : {
+              "$ref" : "#/definitions/ProductNotFoundResponse"
+            }
           }
         }
       },
@@ -87,6 +93,15 @@
     }
   },
   "definitions" : {
+    "ProductNotFoundResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      },
+      "description" : "Product is not found"
+    },
     "Product" : {
       "type" : "object",
       "properties" : {
