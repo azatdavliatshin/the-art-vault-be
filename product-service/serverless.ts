@@ -1,6 +1,4 @@
-import type { Serverless } from 'serverless/aws';
-
-const serverlessConfiguration: Serverless = {
+const serverlessConfiguration = {
   service: {
     name: 'product-service',
     // app and org for use with dashboard.serverless.com
@@ -12,10 +10,59 @@ const serverlessConfiguration: Serverless = {
     webpack: {
       webpackConfig: './webpack.config.js',
       includeModules: true
+    },
+    documentation: {
+      api: {
+        info: {
+          title: "The Art Vault API",
+          description: "API for best shop of art"
+        }
+      },
+      models: [
+        {
+          name: 'Product',
+          description: 'Product model in search page',
+          contentType: 'application/json',
+          schema: {
+            type: 'object',
+            properties: {
+              id: {
+                type: 'string'
+              },
+              title: {
+                type: 'string'
+              },
+              description: {
+                type: 'string'
+              },
+              price: {
+                type: 'number'
+              },
+              image: {
+                type: 'string'
+              }
+            }
+          }
+        },
+        {
+          name: 'SearchResponse',
+          description: 'Search result model in search page',
+          contentType: 'application/json',
+          schema: {
+            type: 'array',
+            items: {
+              $ref: '{{model: Product}}'
+            }
+          }
+        }
+      ]
     }
   },
   // Add the serverless-webpack plugin
-  plugins: ['serverless-webpack'],
+  plugins: [
+    'serverless-webpack',
+    'serverless-aws-documentation'
+  ],
   provider: {
     name: 'aws',
     runtime: 'nodejs12.x',
@@ -35,7 +82,18 @@ const serverlessConfiguration: Serverless = {
           http: {
             method: 'get',
             path: 'products',
-            cors: true
+            cors: true,
+            documentation: {
+              summary: 'Get all products',
+              description: 'method to get all products',
+              methodResponses: [
+                {
+                  statusCode: '200',
+                  description: 'Success response',
+                  responseModels: {'application/json': 'SearchResponse'}
+                }
+              ]
+            }
           }
         }
       ]
@@ -54,6 +112,17 @@ const serverlessConfiguration: Serverless = {
                   productId: true
                 }
               }
+            },
+            documentation: {
+              summary: 'Get product by id',
+              description: 'method to get product by id',
+              methodResponses: [
+                {
+                  statusCode: '200',
+                  description: 'Success response',
+                  responseModels: {'application/json': 'Product'}
+                }
+              ]
             }
           }
         }
