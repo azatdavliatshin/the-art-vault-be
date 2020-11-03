@@ -1,6 +1,6 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
 import 'source-map-support/register';
-import * as api from '../api';
+import * as api from '../../api';
 
 export const getProductById: APIGatewayProxyHandler = async (event) => {
     const headers = {
