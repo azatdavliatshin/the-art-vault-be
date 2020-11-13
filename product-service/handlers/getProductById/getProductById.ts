@@ -16,10 +16,21 @@ export const getProductById: APIGatewayProxyHandler = async (event) => {
             body: JSON.stringify(product)
         };
     } catch (err) {
-        return {
-            statusCode: 404,
-            headers,
-            body: JSON.stringify(err)
-        };
+        if (err === 'Product is not found!') {
+            return {
+                statusCode: 404,
+                headers,
+                body: JSON.stringify({
+                    error: 'Not found item in DB',
+                    message: err
+                })
+            };
+        } else {
+            return {
+                statusCode: 500,
+                headers,
+                body: JSON.stringify(err)
+            };
+        }
     }
 };
