@@ -150,7 +150,19 @@ const serverlessConfiguration = {
           }
         }
       ]
-    }
+    },
+    addNewProduct: {
+      handler: 'handler.addNewProduct',
+      events: [
+        {
+          http: {
+            method: 'post',
+            path: 'product',
+            cors: true
+          }
+        }
+      ]
+    },
   }
 }
 
