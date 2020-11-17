@@ -1,5 +1,5 @@
 import { Product } from '../models';
-import {getProductsListDAL, getProductByIdDAL} from '../dal';
+import {getProductsListDAL, getProductByIdDAL, addNewProductDAL} from '../dal';
 
 export const getProductList = (): Promise<Array<Product>> => getProductsListDAL();
 export const getProductById = async (queryId: string): Promise<Product> => {
@@ -14,3 +14,4 @@ export const getProductById = async (queryId: string): Promise<Product> => {
         throw (error);
     }
 };
+export const addNewProduct = (body: Product) => addNewProductDAL(body);
