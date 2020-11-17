@@ -4,6 +4,8 @@ import * as api from '../../api';
 import {corsHeaders} from '../constants';
 
 export const getProductById: APIGatewayProxyHandler = async (event) => {
+    console.log('GET_PRODUCT_BY_ID');
+    console.log(JSON.stringify(event));
     try {
         const productId = event.pathParameters.productId || '';
         const product = await api.getProductById(productId);
