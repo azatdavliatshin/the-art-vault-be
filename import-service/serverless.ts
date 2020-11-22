@@ -53,6 +53,24 @@ const serverlessConfiguration: Serverless = {
           }
         }
       ]
+    },
+    importFileParser: {
+      handler: 'handler.importFileParser',
+      events: [
+        {
+          s3: {
+            bucket: 'the-art-vault-uploaded',
+            event: 's3:ObjectCreated:*',
+            rules: [
+              {
+                prefix: 'uploaded/',
+                suffix: '.csv'
+              }
+            ],
+            existing: true
+          }
+        }
+      ]
     }
   }
 }
